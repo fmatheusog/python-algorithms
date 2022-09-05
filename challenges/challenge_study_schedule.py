@@ -5,10 +5,11 @@ def study_schedule(permanence_period, target_time):
     counter = 0
 
     for item in permanence_period:
-        if None in item:
-            return None
-
-        if isinstance(item[0], str) or isinstance(item[1], str):
+        if (
+            None in item
+            or isinstance(item[0], str)
+            or isinstance(item[1], str)
+        ):
             return None
 
         if item[0] <= target_time <= item[1]:
